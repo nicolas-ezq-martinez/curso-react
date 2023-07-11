@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Navbar from './components/Navbar';
+import Perfumo from './components/Perfumo';
+import Marcas from './components/Marcas';
+import Tratamientos from './components/Tratamientos';
+import Registro from './components/Registro';
 
-function App() {
+const App = () => {
+  const [pageShown, setPageShown] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Navbar setPageShown={setPageShown} />
+      <div className="pages">
+        <Perfumo show={pageShown === 0} />
+        <Marcas show={pageShown === 1} />
+        <Tratamientos show={pageShown === 2} />
+        <Registro show={pageShown === 3} />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
