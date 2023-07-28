@@ -1,0 +1,43 @@
+.navbar-styles {
+    top: 0;
+    position: sticky;
+    z-index: 100;
+    grid-area: navbar-styles;
+    width: 100%;
+    background-color: #3ABDC9;
+}
+
+.navbar-styles .btn-outline-success:hover {
+    background-color: #06ffff;
+}
+
+.navbar-styles ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.navbar-styles li {
+    border-radius: 5px;
+}
+
+.navbar-styles a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.cart-container {
+    width: 45px;
+    margin: 0 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+    .navbar-styles li:hover {
+        background-color: #06ffff;
+    }
+}
