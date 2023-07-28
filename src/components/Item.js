@@ -6,7 +6,6 @@ import './styles/Perfumes.css'
 const Item = ({ addCartItem }) => {
     const { itemId } = useLoaderData();
     const itemConfig = itemsMap[itemId];
-    console.log(itemConfig);
     return (
         <div className="perfumes">
             <div className="container">
