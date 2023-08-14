@@ -1,0 +1,21 @@
+.cartList {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.listItem {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 350px;
+    font-size: 30px;
+}
+
+.listItem img {
+    width: 350px;
+    height: 350px;
+    margin-right: 10px;
+}

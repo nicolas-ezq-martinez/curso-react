@@ -43,10 +43,23 @@
 .container .compra {
     padding: 5px;
     margin: 0 auto;
+    margin-right: 10px;
     height: 40px;
     width: 200px;
     border-radius: 20px;
     overflow: hidden;
     background-color: black;
     color: white;
+}
+
+
+
+.buy {
+    display: flex;
+    margin-right: 10px;
+}
+
+.quantity {
+    height: 10px;
+    width: 30px;
 }

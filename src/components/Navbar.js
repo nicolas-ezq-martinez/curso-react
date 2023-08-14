@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/Navbar.css';
 import { useNavigate } from 'react-router-dom';
 
+const getItemsQuantity = (items) => items.reduce((cont, item) => cont + item.cantidad, 0);
 
 const Navbar = ({ cartItems }) => {
     const navigate = useNavigate();
@@ -33,8 +34,8 @@ const Navbar = ({ cartItems }) => {
                             <button className="btn btn-outline-success" type="submit">Buscar</button>
                         </form>
                         <button className="nav-link active cart-container" aria-current="page">
-                            <i className="bi bi-cart" />
-                            <span className="cart-counter">{cartItems.length}</span>
+                            <a onClick={() => navigate('/carrito')} className="nav-link active" aria-current="page"><i className="bi bi-cart" /></a>
+                            <span className="cart-counter">{getItemsQuantity(cartItems)}</span>
                         </button>
                     </div>
                 </div>
