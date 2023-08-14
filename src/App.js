@@ -35,13 +35,13 @@ const App = () => {
       setCartItems([...cartItems, { ...itemsMap[id], cantidad: quantity }]);
     }
   }
-  // const removeCartItem = (item) => setCartItems(cartItems.filter(cartItem => cartItem != item));
+
 
   const removeCartItem = (id) => {
     const nuevosItems = cartItems.filter(item => item.id !== id);
     setCartItems(nuevosItems);
   }
-  // const addCartItem = (item) => setCartItems([...cartItems, item]);
+
 
   return <RouterProvider router={createBrowserRouter(
     createRoutesFromElements(
