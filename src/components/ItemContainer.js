@@ -20,9 +20,9 @@ const ItemContainer = ({ addCartItem, id, name, icon, price }) => {
             <div className='precio' title={price}>{price}</div>
             <div className='buy'>
                 <button className="compra" onClick={() => addCartItem(id, currentQuantity)}>Agregar al carro</button>
-                <button onClick={minusQuantity} className="minus"><i class="bi bi-file-minus-fill"></i></button>
+                <button onClick={minusQuantity} className="minus"><i className="bi bi-file-minus-fill"></i></button>
                 <span className='quantity'>{currentQuantity}</span>
-                <button onClick={plusQuantity} className="plus"><i class="bi bi-file-plus-fill"></i></button>
+                <button onClick={plusQuantity} className="plus"><i className="bi bi-file-plus-fill"></i></button>
             </div>
         </div>
     );
