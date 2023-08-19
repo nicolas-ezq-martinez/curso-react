@@ -10,7 +10,10 @@ const Carrito = ({ cartItems, removeCartItem }) => {
                 return (
                     <div className='listItem'>
                         <img src={itemConfig.icon} alt={itemConfig.name} />
-                        <p>{itemConfig.name} <span className='contador'>{`Cantidad: ${itemConfig.cantidad}`}</span> </p>
+                        <p>{itemConfig.name}
+                            <span className='contador'>{`Cantidad: ${itemConfig.cantidad}`}</span>
+                            <span className='precio'>{`Precio: ${itemConfig.price}`}</span>
+                        </p>
 
                         <span className="borrar" onClick={() => removeCartItem(itemConfig.id)}><i className="bi bi-x-lg" style={{ fontSize: '2rem', color: '#ff0000' }} ></i></span>
                     </div>

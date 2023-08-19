@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const ItemContainer = ({ addCartItem, id, name, icon }) => {
+const ItemContainer = ({ addCartItem, id, name, icon, price }) => {
     const navigate = useNavigate();
     const [currentQuantity, setCurrentQuantity] = useState(1);
     const plusQuantity = () => {
@@ -17,6 +17,7 @@ const ItemContainer = ({ addCartItem, id, name, icon }) => {
                 <img src={icon} alt={name} />
             </div>
             <div onClick={() => navigate(`/item/${id}`)} className="nombre-perfume" title={name}>{name}</div>
+            <div className='precio' title={price}>{price}</div>
             <div className='buy'>
                 <button className="compra" onClick={() => addCartItem(id, currentQuantity)}>Agregar al carro</button>
                 <button onClick={minusQuantity} className="minus"><i class="bi bi-file-minus-fill"></i></button>
