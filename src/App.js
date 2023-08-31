@@ -19,7 +19,7 @@ const itemLoader = ({ params: { itemId } }) => {
   return { itemId };
 };
 
-console.log("hola");
+
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
