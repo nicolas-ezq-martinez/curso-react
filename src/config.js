@@ -132,7 +132,7 @@ export const tratamientosMap = {
         id: 'tratamiento1',
         name: '"CLINIQUE | DAILY ESSENTIALS"',
         icon: tratamiento1,
-        price: 0,
+        price: 6000,
     },
     tratamiento2: {
         id: 'tratamiento2',
@@ -160,7 +160,7 @@ export const tratamientosMap = {
     },
     tratamiento6: {
         id: 'tratamiento6',
-        name: '"BIOTHERM | BLUE THERAPY PRO RETINIOL CREAM"',
+        name: '     ',
         icon: tratamiento6,
         price: 50000,
     },
