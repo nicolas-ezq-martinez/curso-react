@@ -3,6 +3,16 @@ import './styles/Carrito.css';
 import Swal from 'sweetalert2';
 
 
+const getImg = (icon) => {
+    let imgSrc;
+    try {
+        imgSrc = require(`./images${icon}.jpg`);
+    } catch (e) {
+        console.error('img', icon, 'not found');
+    }
+    return imgSrc;
+};
+
 const Carrito = ({ cartItems, removeCartItem, totalPrice }) => {
     console.log(cartItems);
     return (
@@ -12,7 +22,7 @@ const Carrito = ({ cartItems, removeCartItem, totalPrice }) => {
                 {cartItems.map((itemConfig) => {
                     return (
                         <div className='listItem'>
-                            <img src={itemConfig.icon} alt={itemConfig.name} />
+                            <img src={getImg(itemConfig.icon)} alt={itemConfig.name} />
                             <p>{itemConfig.name}
                                 <span className='contador'>{`Cantidad: ${itemConfig.cantidad}`}</span>
                                 <span className='precio'>{`Precio: ${itemConfig.price}`}</span>

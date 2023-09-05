@@ -24,10 +24,11 @@ const itemLoader = ({ params: { itemId } }) => {
 
 
 const App = () => {
+
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
 
-
+  //hooks
   const { document: dbItems } = useGetDocuments("perfumes");
   const { document: dbMarcas } = useGetDocuments("marcas");
 
@@ -84,7 +85,7 @@ const App = () => {
         <Route path="/categoria/tratamiento" element={<ItemsList items={tratamientos} addCartItem={addCartItem} />} />
         <Route path="/item/:itemId" loader={itemLoader} element={<Item dbItems={dbItems} addCartItem={addCartItem} />} />
         <Route path="/registro" element={<Registro addCartItem={addCartItem} />} />
-        <Route path="/carrito" element={<Carrito cartItems={cartItems} addCartItem={addCartItem} removeCartItem={removeCartItem} totalPrice={totalPrice} />} />
+        <Route path="/carrito" element={<Carrito cartItems={cartItems} dbItems={dbItems} addCartItem={addCartItem} removeCartItem={removeCartItem} totalPrice={totalPrice} />} />
       </Route>
     )
   )} />;
