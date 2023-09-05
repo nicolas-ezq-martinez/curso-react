@@ -160,7 +160,7 @@ export const tratamientosMap = {
     },
     tratamiento6: {
         id: 'tratamiento6',
-        name: '     ',
+        name: '"Biotherm Blue Therapy Crema Pro-Retinol"',
         icon: tratamiento6,
         price: 50000,
     },

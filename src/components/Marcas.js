@@ -1,5 +1,4 @@
 import React from 'react';
-import { marcas1, marcas2, marcas3, marcas4, marcas5, marcas6, marcas7, marcas8, marcas9, marcas10, marcas11, marcas12 } from './images';
 import CarouselComponent from './CarouselMarcas';
 import './styles/Marcas.css'
 import { marcasMap } from '../config';
