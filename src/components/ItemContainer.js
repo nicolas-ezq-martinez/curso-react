@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+const getImg = (icon) => {
+    let imgSrc;
+    try {
+        imgSrc = require(`./images${icon}.jpg`);
+    } catch (e) {
+        console.error('img', icon, 'not found');
+    }
+    return imgSrc;
+};
+
 const ItemContainer = ({ addCartItem, id, name, icon, price }) => {
     const navigate = useNavigate();
     const [currentQuantity, setCurrentQuantity] = useState(1);
@@ -14,7 +24,7 @@ const ItemContainer = ({ addCartItem, id, name, icon, price }) => {
     return (
         <div className="container" key={id}>
             <div onClick={() => navigate(`/item/${id}`)} className="articulos">
-                <img src={icon} alt={name} />
+                <img src={getImg(icon)} alt={name} />
             </div>
             <div onClick={() => navigate(`/item/${id}`)} className="nombre-perfume" title={name}>{name}</div>
             <div className='precio' title={price}>{price}</div>

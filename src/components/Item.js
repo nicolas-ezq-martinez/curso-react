@@ -1,18 +1,15 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { itemsMap } from '../config';
 import './styles/Perfumes.css'
 import ItemContainer from './ItemContainer';
 
-const Item = ({ addCartItem }) => {
+const Item = ({ addCartItem, dbItems }) => {
     const { itemId } = useLoaderData();
-    const itemConfig = itemsMap[itemId];
+    const itemConfig = dbItems.find(item => item.id === itemId);;
     return (
         <div className="perfumes">
             <ItemContainer
-                key={itemId}
                 addCartItem={addCartItem}
-                id={itemId}
                 {...itemConfig}
             />
         </div>

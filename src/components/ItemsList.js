@@ -2,14 +2,13 @@ import React from 'react';
 import './styles/Perfumes.css'
 import ItemContainer from './ItemContainer';
 
-const ItemsList = ({ addCartItem, map }) => (
+const ItemsList = ({ addCartItem, items }) => (
     <div className="perfumes">
-        {Object.keys(map).map((id) => (
+        {items.map(item => (
             <ItemContainer
-                key={id}
+                key={item.id}
                 addCartItem={addCartItem}
-                id={id}
-                {...map[id]}
+                {...item}
             />
         ))}
     </div>

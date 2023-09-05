@@ -1,22 +1,33 @@
 import React from 'react';
 import CarouselComponent from './CarouselMarcas';
 import './styles/Marcas.css'
-import { marcasMap } from '../config';
 
-const Marcas = () => {
+
+const getImg = (icon) => {
+    let imgSrc;
+    try {
+        imgSrc = require(`./images${icon}.jpg`);
+    } catch (e) {
+        console.error('img', icon, 'not found');
+    }
+    return imgSrc;
+};
+
+
+const Marcas = ({ dbMarcas }) => {
     return (
         <div className="marcas">
             <div className="seccion-marcas">
-                < CarouselComponent />
+                < CarouselComponent dbMarcas={dbMarcas} />
             </div>
 
             <div className="seccion2-marcas">
                 <div className="grupomarcas">
-                    {Object.keys(marcasMap).map((id) => {
-                        const { name, icon } = marcasMap[id];
+                    {dbMarcas.map((marca) => {
+                        const { name, icon } = marca;
                         return (
-                            <div className="marcas" key={id}>
-                                <img className="zoom" src={icon} alt={name} />
+                            <div className="marcas" key={name}>
+                                <img className="zoom" src={getImg(icon)} alt={name} />
                             </div>
                         )
                     })}
