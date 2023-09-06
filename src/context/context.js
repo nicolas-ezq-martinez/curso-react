@@ -104,7 +104,7 @@ export const CartProvider = ({ children }) => {
                 tratamientos,
                 dbItems,
                 sendPurchase,
-                updatePurchase
+                // updatePurchase
             }}
         >
             {children}
