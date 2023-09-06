@@ -21,7 +21,7 @@ const CarouselComponent = ({ dbMarcas }) => {
 
     return (
         <Carousel slide={false} indicators={false} activeIndex={index} onSelect={handleSelect} variant={"dark"}>
-            {dbMarcas.map((marca) => {
+            {dbMarcas?.map((marca) => {
                 const { icon } = marca;
                 return (
                     <Carousel.Item>

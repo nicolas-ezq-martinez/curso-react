@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-
+import { CartProvider } from './context/context';
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBcxTHeWkh9-X6POK9mYAGVxaZ8jr3B_Qc",
@@ -24,7 +24,9 @@ initializeApp(firebaseConfig);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <CartProvider>
+      <App />
+    </CartProvider>
   </React.StrictMode>
 );
 

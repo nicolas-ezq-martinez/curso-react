@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { cartContext } from '../context/context'
 
 const getImg = (icon) => {
     let imgSrc;
@@ -11,7 +12,9 @@ const getImg = (icon) => {
     return imgSrc;
 };
 
-const ItemContainer = ({ addCartItem, id, name, icon, price }) => {
+const ItemContainer = ({ id, name, icon, price }) => {
+    const { addCartItem } = useContext(cartContext);
+
     const navigate = useNavigate();
     const [currentQuantity, setCurrentQuantity] = useState(1);
     const plusQuantity = () => {

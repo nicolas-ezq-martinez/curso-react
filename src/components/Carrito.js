@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './styles/Carrito.css';
-import Swal from 'sweetalert2';
+import { cartContext } from '../context/context'
 
 
 const getImg = (icon) => {
@@ -13,8 +13,8 @@ const getImg = (icon) => {
     return imgSrc;
 };
 
-const Carrito = ({ cartItems, removeCartItem, totalPrice }) => {
-    console.log(cartItems);
+const Carrito = () => {
+    const { cartItems, totalPrice, removeCartItem, sendPurchase, updatePurchase } = useContext(cartContext);
     return (
         <>
             <span className='total'>{`Total: ${totalPrice}`}</span>
@@ -34,14 +34,8 @@ const Carrito = ({ cartItems, removeCartItem, totalPrice }) => {
                     );
                 })}
             </div>
-            <button className='cierre' onClick={() => {
-                Swal.fire(
-                    'Compra Finalizada!',
-                    `Su monto total es de ${totalPrice}`,
-                    'success'
-                )
-            }}>{`Cierre de compra`}</button>
-
+            <button className='cierre' onClick={sendPurchase}>{`Cierre de compra`}</button>
+            <button className='correccion' onClick={updatePurchase}>{`Correccion de compra`}</button>
         </>
     );
 };

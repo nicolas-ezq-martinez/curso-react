@@ -1,6 +1,8 @@
 import React from 'react';
 import CarouselComponent from './CarouselMarcas';
 import './styles/Marcas.css'
+import useGetDocuments from '../hooks/useGetDocuments';
+
 
 
 const getImg = (icon) => {
@@ -14,7 +16,8 @@ const getImg = (icon) => {
 };
 
 
-const Marcas = ({ dbMarcas }) => {
+const Marcas = () => {
+    const { document: dbMarcas } = useGetDocuments("marcas");
     return (
         <div className="marcas">
             <div className="seccion-marcas">
@@ -23,7 +26,7 @@ const Marcas = ({ dbMarcas }) => {
 
             <div className="seccion2-marcas">
                 <div className="grupomarcas">
-                    {dbMarcas.map((marca) => {
+                    {dbMarcas?.map((marca) => {
                         const { name, icon } = marca;
                         return (
                             <div className="marcas" key={name}>

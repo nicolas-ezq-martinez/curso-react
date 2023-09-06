@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 import { useState } from "react";
 
