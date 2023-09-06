@@ -87,11 +87,11 @@ export const CartProvider = ({ children }) => {
 
     }
 
-    const updatePurchase = () => {
-        const db = getFirestore();
-        const orderDoc = doc(db, "compras", doc.id);
-        updateDoc(orderDoc, { price: calculateTotalPrice(cartItems), quantity: calculateTotalProducts(cartItems) }).then((doc) => console.log(doc));
-    }
+    // const updatePurchase = () => {
+    //     const db = getFirestore();
+    //     const orderDoc = doc(db, "compras", doc.id);
+    //     updateDoc(orderDoc, { price: calculateTotalPrice(cartItems), quantity: calculateTotalProducts(cartItems) }).then((doc) => console.log(doc));
+    // }
 
     return (
         <cartContext.Provider

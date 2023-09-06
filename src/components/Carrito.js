@@ -35,7 +35,7 @@ const Carrito = () => {
                 })}
             </div>
             <button className='cierre' onClick={sendPurchase}>{`Cierre de compra`}</button>
-            <button className='correccion' onClick={updatePurchase}>{`Correccion de compra`}</button>
+            {/* <button className='correccion' onClick={updatePurchase}>{`Correccion de compra`}</button> */}
         </>
     );
 };
